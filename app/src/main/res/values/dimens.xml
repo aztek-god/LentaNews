@@ -1,0 +1,18 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="floating_search_left">16dp</dimen>
+    <dimen name="floating_search_top">16dp</dimen>
+    <dimen name="floating_search_right">16dp</dimen>
+    <dimen name="activity_padding_horizontal">16dp</dimen>
+    <dimen name="padd_10">10dp</dimen>
+    <dimen name="ic_delete">30dp</dimen>
+    <dimen name="thumbnail">90dp</dimen>
+
+    <dimen name="card_view_bottom_margin">4dp</dimen>
+    <dimen name="card_view_top_margin">4dp</dimen>
+    <dimen name="card_view_right_margin">8dp</dimen>
+    <dimen name="card_view_left_margin">8dp</dimen>
+</resources>

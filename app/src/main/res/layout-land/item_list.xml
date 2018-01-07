@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="4dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="4dp">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/listItemId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteY="25dp">
+
+        <ImageView
+            android:id="@+id/thumbnailId"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/nav_menu_header_bg" />
+
+        <TextView
+            android:id="@+id/headerId"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="8dp"
+            android:maxLines="1"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/thumbnailId"
+            app:layout_constraintTop_toTopOf="@+id/thumbnailId"
+            tools:text="Header" />
+
+        <TextView
+            android:id="@+id/shortDescId"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:maxLines="3"
+            android:text="TextView"
+            app:layout_constraintEnd_toEndOf="@+id/headerId"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/headerId"
+            app:layout_constraintTop_toBottomOf="@+id/headerId"
+            tools:text="This sample contains the layout implementation for all the possible CardView combinations listedThis sample contains the layout implementation for all the possible CardView combinations listed" />
+
+        <TextView
+            android:id="@+id/dateTimeId"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:maxLines="1"
+            app:layout_constraintBottom_toBottomOf="@+id/thumbnailId"
+            app:layout_constraintStart_toStartOf="@+id/shortDescId"
+            app:layout_constraintTop_toBottomOf="@+id/shortDescId"
+            tools:text="DateTime" />
+
+        <TextView
+            android:id="@+id/fromSource"
+            android:layout_width="wrap_content"
+            android:layout_height="18dp"
+            android:textStyle="bold"
+            app:layout_constraintBaseline_toBaselineOf="@+id/dateTimeId"
+            app:layout_constraintEnd_toEndOf="@+id/headerId"
+            tools:text="fromSource" />
+
+        <TextView
+            android:id="@+id/from"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:text="From:"
+            android:textStyle="italic"
+            app:layout_constraintBottom_toBottomOf="@+id/fromSource"
+            app:layout_constraintEnd_toStartOf="@+id/fromSource"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/dateTimeId"
+            app:layout_constraintTop_toTopOf="@+id/fromSource" />
+    </android.support.constraint.ConstraintLayout>
+</android.support.v7.widget.CardView>

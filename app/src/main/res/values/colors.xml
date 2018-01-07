@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="swipeRefreshRed">#B30F12</color>
+    <color name="swipeRefreshGreen">#0c9103</color>
+    <color name="swipeRefreshBlue">#040e99</color>
+
+    <color name="colorPrimaryTextDefaultMaterialLight">#DE000000</color>
+    <color name="colorSecondaryTextDefaultMaterialLight">#8A000000</color>
+
+    <color name="colorPrimaryTextDefaultMaterialDark">#eadbdb</color>
+    <color name="colorSecondaryTextDefaultMaterialDark">#B3FFFFFF</color>
+
+    <color name="bg_row_background">#fa315b</color>
+    <color name="item_name">#535353</color>
+    <color name="description">#a9a9a9</color>
+    <color name="bookmark_color">#fcde49</color>
+    <color name="bookmark_border_color">#DE000000</color>
+</resources>

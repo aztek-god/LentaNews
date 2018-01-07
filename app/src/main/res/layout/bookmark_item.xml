@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_marginStart="@dimen/card_view_left_margin"
+    android:layout_marginEnd="@dimen/card_view_right_margin"
+    android:layout_marginTop="@dimen/card_view_top_margin"
+    android:layout_marginBottom="@dimen/card_view_bottom_margin"
+    android:layout_height="wrap_content">
+
+
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/bookmarkTile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/bookmarkSource"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            app:layout_constraintBaseline_toBaselineOf="@+id/bookmarkLabel"
+            app:layout_constraintStart_toEndOf="@+id/bookmarkLabel"
+            tools:text="Lenta" />
+
+        <TextView
+            android:id="@+id/bookmarkLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Source: " />
+
+        <TextView
+            android:id="@+id/visitLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="16dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/bookmarkDesc"
+            app:layout_constraintTop_toBottomOf="@+id/bookmarkDesc"
+            tools:text="Visited at " />
+
+        <TextView
+            android:id="@+id/bookmarkDatetime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:text="TextView"
+            app:layout_constraintBaseline_toBaselineOf="@+id/visitLabel"
+            app:layout_constraintEnd_toEndOf="@+id/bookmarkDesc"
+            app:layout_constraintStart_toEndOf="@+id/visitLabel"
+            tools:text="22/12/17, 20:22:17" />
+
+        <TextView
+            android:id="@+id/bookmarkDesc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="TextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bookmarkTitle"
+            tools:text="This endpoint returns the subset of news publishers that top headlines (/v2/top-headlines) are available from. It's mainly a convenience endpoint that you can use to keep track of the publishers available on the API, and you can pipe it straight through to your users.  " />
+
+        <TextView
+            android:id="@+id/bookmarkTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="TextView"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bookmarkLabel"
+            tools:text="Title" />
+    </android.support.constraint.ConstraintLayout>
+</android.support.v7.widget.CardView>
