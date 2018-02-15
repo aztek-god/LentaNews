@@ -5,19 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="dv.serg.lentanews.ui.ListActivity"
+    tools:context="dv.serg.lentanews.ui.activity.ListActivity"
     tools:showIn="@layout/activity_list">
 
-    <android.support.v4.widget.SwipeRefreshLayout
-        android:id="@+id/listSwipeRefreshLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyclerList"
+        android:id="@+id/listRecycler"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
-
-    </android.support.v4.widget.SwipeRefreshLayout>
 
 </android.support.constraint.ConstraintLayout>

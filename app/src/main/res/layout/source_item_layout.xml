@@ -27,7 +27,7 @@
             app:layout_constraintBottom_toBottomOf="@+id/sourceDesc"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/sourceTitle"
-            app:srcCompat="@mipmap/lenta_touch" />
+             />
 
         <TextView
             android:id="@+id/sourceTitle"

@@ -47,7 +47,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@+id/bookmarkDesc"
             app:layout_constraintTop_toBottomOf="@+id/bookmarkDesc"
-            tools:text="Visited at " />
+            tools:text="Added" />
 
         <TextView
             android:id="@+id/bookmarkDatetime"

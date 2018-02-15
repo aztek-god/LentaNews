@@ -3,17 +3,12 @@ package dv.serg.lentanews
 import android.app.Activity
 import android.app.Application
 import android.os.Bundle
-import dv.serg.lentanews.component.AppComponent
-import dv.serg.lentanews.component.DaggerAppComponent
-import dv.serg.lentanews.component.DaggerLentaComponent
-import dv.serg.lentanews.component.DaggerWebViewComponent
-import dv.serg.lentanews.module.AppModule
-import dv.serg.lentanews.module.LentaModule
-import dv.serg.lentanews.module.WebViewModule
-import dv.serg.lentanews.ui.ListActivity
-import dv.serg.lentanews.ui.WebViewActivity
-import dv.serg.lentanews.util.Injectable
-import io.realm.Realm
+import dv.serg.lentanews.di.component.*
+import dv.serg.lentanews.di.module.*
+import dv.serg.lentanews.ui.activity.BookmarkActivity
+import dv.serg.lentanews.ui.activity.HistoryActivity
+import dv.serg.lentanews.ui.activity.MainActivity
+import dv.serg.lentanews.ui.activity.SourceActivity
 import timber.log.Timber
 
 
@@ -21,13 +16,27 @@ class AppContext : Application() {
 
     private lateinit var appComponent: AppComponent
 
+    companion object {
+        interface ActivityType {
+            companion object {
+                const val HISTORY = 101
+                const val BOOKMARKS = 102
+            }
+        }
+
+        interface TimePattern {
+            companion object {
+                const val PRETTY = "dd-MM-yyyy HH:mm:ss"
+                const val CURRENT = "yyyy-MM-dd'T'HH:mm:ss'Z'"
+            }
+        }
+    }
+
     override fun onCreate() {
         super.onCreate()
 
         val appModule = AppModule(this)
         appComponent = DaggerAppComponent.builder().appModule(appModule).build()
-
-        Realm.init(this)
 
 
         if (BuildConfig.DEBUG) {
@@ -64,17 +73,22 @@ class AppContext : Application() {
                     }
 
                     override fun onActivityCreated(activity: Activity?, p1: Bundle?) {
-                        if (activity is Injectable) {
-                            when (activity) {
-                                is ListActivity -> {
-                                    DaggerLentaComponent.builder().appComponent(appComponent)
-                                            .lentaModule(LentaModule(activity)).build().inject(activity)
-                                }
-                                is WebViewActivity -> {
-                                    DaggerWebViewComponent.builder()
-                                            .webViewModule(WebViewModule(activity))
-                                            .build().inject(activity)
-                                }
+                        when (activity) {
+                            is MainActivity -> {
+                                DaggerMainActivityComponent.builder().appComponent(appComponent)
+                                        .mainActivityModule(MainActivityModule(activity))
+                                        .build().inject(activity)
+                            }
+                            is HistoryActivity -> {
+                                DaggerHistoryActivityComponent.builder().historyModule(HistoryModule(activity, activity)).build().inject(activity)
+                            }
+                            is BookmarkActivity -> {
+                                DaggerBookmarkActivityComponent.builder().bookmarkModule(BookmarkModule(activity, activity)).build().inject(activity)
+                            }
+                            is SourceActivity -> {
+                                DaggerSourceActivityComponent.builder().appComponent(appComponent)
+                                        .sourceModule(SourceModule(activity))
+                                        .build().inject(activity)
                             }
                         }
                     }

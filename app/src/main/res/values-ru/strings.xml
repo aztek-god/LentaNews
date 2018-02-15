@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Лента.ру</string>
+    <string name="history">История</string>
+    <string name="settings">Настройки</string>
+    <string name="about_author">Об авторе</string>
+    <string name="sergdv">Сергей Двуреченский</string>
+    <string name="bookmarks">Закладки</string>
+    <string name="sources">Дополнительные Ресурсы</string>
+    <string name="urlToNews">Скопировать ссылку</string>
+    <string name="submit">Подтвердить</string>
+    <string name="title_activity_main">Главное окно</string>
+    <string name="search">Поиск</string>
+    <string name="cancel">Отменить</string>
+    <string name="author_email">serg.dv.cas@gmail.com</string>
+    <string name="delete">Удалить</string>
+    <string name="from">От</string>
+    <string name="visited">Просмотрено</string>
+    <string name="title_bookmark">BookmarkActivity</string>
+</resources>

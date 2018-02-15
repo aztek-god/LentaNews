@@ -2,6 +2,7 @@ package dv.serg.lentanews.pojo
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
+import dv.serg.lentanews.dao.abstr.SpecificKey
 
 data class Article(
         @SerializedName("source")
@@ -25,8 +26,13 @@ data class Article(
         @SerializedName("publishedAt")
         @Expose
         val publishedAt: String?
-) {
-    val sourceId: String get() = source?.id ?: ""
-    val sourceName: String get() = source?.name ?: ""
+) : SpecificKey<String> {
+
+    override fun getKey(): String {
+        return title!!.substring(0, 10) + description!!.substring(0, 10)
+    }
+
+    val specKey: String get() = getKey()
+
     var isBookmarked: Boolean = false
 }

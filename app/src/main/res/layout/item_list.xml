@@ -22,14 +22,10 @@
             android:id="@+id/thumbnailId"
             android:layout_width="0dp"
             android:layout_height="216dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:scaleType="centerCrop"
             app:layout_constraintDimensionRatio="w,16:9"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/headerId"
-            app:srcCompat="@drawable/nav_menu_header_bg" />
+            app:layout_constraintTop_toBottomOf="@+id/headerId" />
 
         <TextView
             android:id="@+id/headerId"
@@ -37,11 +33,11 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:maxLines="3"
             android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@+id/bookmarkId"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Some header" />
@@ -49,12 +45,16 @@
         <TextView
             android:id="@+id/shortDescId"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_height="68dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
             android:maxLines="9"
             android:text="TextView"
-            app:layout_constraintEnd_toEndOf="@+id/headerId"
-            app:layout_constraintStart_toStartOf="@+id/headerId"
+            app:layout_constraintBottom_toTopOf="@+id/from"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/thumbnailId"
             tools:text="This sample contains the layout implementation for all the possible CardView combinations listedThis sample contains the layout implementation for all the possible CardView combinations listed" />
 
@@ -62,58 +62,34 @@
             android:id="@+id/dateTimeId"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
             android:maxLines="1"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/guideline"
             app:layout_constraintStart_toStartOf="@+id/shortDescId"
             app:layout_constraintTop_toBottomOf="@+id/shortDescId"
             tools:text="DateTime" />
-
-        <android.support.constraint.Guideline
-            android:id="@+id/guideline"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.5" />
 
         <TextView
             android:id="@+id/from"
             android:layout_width="wrap_content"
             android:layout_height="18dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:text="From:"
+            android:text="@string/from"
             android:textStyle="italic"
-            app:layout_constraintBaseline_toBaselineOf="@+id/fromSource"
-            app:layout_constraintEnd_toStartOf="@+id/fromSource"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="@+id/guideline" />
+            app:layout_constraintBaseline_toBaselineOf="@+id/dateTimeId"
+            app:layout_constraintEnd_toStartOf="@+id/fromSource" />
 
         <TextView
             android:id="@+id/fromSource"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
+            android:layout_marginEnd="8dp"
             android:text="TextView"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/dateTimeId"
+            app:layout_constraintBaseline_toBaselineOf="@+id/from"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/dateTimeId"
-            app:layout_constraintVertical_bias="0.0"
             tools:text="Lenta" />
-
-        <ImageView
-            android:id="@+id/bookmarkId"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginTop="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_bookmark_border_24dp" />
 
     </android.support.constraint.ConstraintLayout>
 </android.support.v7.widget.CardView>
